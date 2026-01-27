@@ -28,7 +28,7 @@ variable "repo" {
   type        = string
 }
 
-variable "wif_provider" {
+variable "gcp_wif_provider" {
   description = "Full resource name of the WIF provider - from GCP_WIF_PROVIDER secret"
   type        = string
 }
@@ -39,7 +39,7 @@ variable "region" {
   default     = "us-central1"
 }
 
-variable "composer_service_account_email" {
+variable "gcp_ci_sa" {
   description = "Service account email for Cloud Composer (auto-generated from project_id)"
   type        = string
   default     = ""
