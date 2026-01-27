@@ -46,7 +46,7 @@ jobs:
             -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
             -var="project_number=${{ secrets.PROJECT_NUMBER }}" \
             -var="gcp_ci_sa=${{ secrets.GCP_CI_SA }}" \
-            -var="env=${{ env.ENV }}" \
+            -var="env=${{ vars.ENV }}" \
             -var="var_github_org=${{ secrets.VAR_GITHUB_ORG }}" \
             -var="repo=${{ secrets.REPO }}" \
             -var="gcp_wif_provider=${{ secrets.GCP_WIF_PROVIDER }}"
