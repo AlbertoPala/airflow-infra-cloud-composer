@@ -13,7 +13,7 @@ module "wif" {
 resource "google_project_iam_member" "ci_storage_admin" {
   project = var.project_id
   role    = "roles/storage.admin"
-  member  = "principalSet://iam.googleapis.com/${var.gcp_wif_provider}/attribute.repository/${var.var_github_org}/${var.repo}"
+  member  = "principalSet://iam.googleapis.com/${var.wif_provider}/attribute.repository/${var.var_github_org}/${var.repo}"
 }
 # GCS Module - Terraform State Bucket
 module "gcs_terraform_state" {
