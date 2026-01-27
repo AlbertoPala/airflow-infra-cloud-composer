@@ -3,7 +3,7 @@ resource "google_service_account_iam_binding" "github_wif" {
   role               = "roles/iam.workloadIdentityUser"
 
   members = [
-    "principalSet://iam.googleapis.com/${var.gcp_wif_provider}/attribute.repository/${var.var_github_org}/${var.repo}"
+    "principalSet://iam.googleapis.com/${var.gcp_wif_provider}/attributes.repository/${var.var_github_org}/${var.repo}"
   ]
 }
 
@@ -12,6 +12,6 @@ resource "google_service_account_iam_binding" "github_token_creator" {
   role               = "roles/iam.serviceAccountTokenCreator"
 
   members = [
-    "principalSet://iam.googleapis.com/${var.gcp_wif_provider}/attribute.repository/${var.var_github_org}/${var.repo}"
+    "principalSet://iam.googleapis.com/${var.gcp_wif_provider}/attributes.repository/${var.var_github_org}/${var.repo}"
   ]
 }

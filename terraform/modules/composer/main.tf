@@ -10,8 +10,8 @@ resource "google_composer_environment" "this" {
     software_config {
       image_version = "composer-3-airflow-2.9.3"
 
-      airflow_config_overrides = {
-        "core.load_examples" = "False"
+      env_variables = {
+        AIRFLOW__CORE__LOAD_EXAMPLES = "False"
       }
     }
 
