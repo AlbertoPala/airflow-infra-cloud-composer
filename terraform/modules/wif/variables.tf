@@ -23,7 +23,7 @@ variable "repo" {
   type        = string
 }
 
-variable "wif_provider" {
+variable "gcp_wif_provider" {
   description = "Full resource name of the WIF provider (GCP_WIF_PROVIDER secret)"
   type        = string
 }
