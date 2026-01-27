@@ -13,7 +13,7 @@ variable "env" {
   type        = string
 }
 
-variable "ci_service_account_email" {
+variable "gcp_ci_sa" {
   description = "CI/CD Service account email - from GCP_CI_SA secret"
   type        = string
 }
