@@ -9,6 +9,13 @@ module "wif" {
   repo             = var.repo
   gcp_wif_provider = var.gcp_wif_provider
 }
+
+# Enable Cloud Composer API
+resource "google_project_service" "composer" {
+  project = var.project_id
+  service = "composer.googleapis.com"
+}
+
 # Grant CI service account storage permissions for Terraform state
 resource "google_project_iam_member" "ci_storage_admin" {
   project = var.project_id
