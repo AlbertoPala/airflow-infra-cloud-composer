@@ -8,7 +8,7 @@ variable "project_number" {
   type        = string
 }
 
-variable "service_account_email" {
+variable "gc_ci_sa" {
   description = "Service account impersonated by GitHub"
   type        = string
 }
