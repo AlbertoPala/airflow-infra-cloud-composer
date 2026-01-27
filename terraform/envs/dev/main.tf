@@ -4,7 +4,7 @@ module "wif" {
 
   project_id       = var.project_id
   project_number   = var.project_number
-  gc_ci_sa         = var.gcp_ci_sa
+  gcp_ci_sa        = var.gcp_ci_sa
   var_github_org   = var.var_github_org
   repo             = var.repo
   gcp_wif_provider = var.gcp_wif_provider
