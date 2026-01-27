@@ -2,12 +2,12 @@
 module "wif" {
   source = "../../modules/wif"
 
-  project_id          = var.project_id
-  project_number      = var.project_number
-  service_account_email = var.gcp_ci_sa
-  var_github_org        = var.var_github_org
-  repo                  = var.repo
-  gcp_wif_provider      = var.gcp_wif_provider
+  project_id       = var.project_id
+  project_number   = var.project_number
+  gc_ci_sa         = var.gcp_ci_sa
+  var_github_org   = var.var_github_org
+  repo             = var.repo
+  gcp_wif_provider = var.gcp_wif_provider
 }
 # Grant CI service account storage permissions for Terraform state via WIF
 resource "google_project_iam_member" "ci_storage_admin" {
