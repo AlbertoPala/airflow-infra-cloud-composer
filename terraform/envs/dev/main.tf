@@ -4,16 +4,16 @@ module "wif" {
 
   project_id          = var.project_id
   project_number      = var.project_number
-  service_account_email = var.ci_service_account_email
+  service_account_email = var.gcp_ci_sa
   var_github_org        = var.var_github_org
   repo                  = var.repo
-  wif_provider          = var.wif_provider
+  gcp_wif_provider      = var.gcp_wif_provider
 }
 # Grant CI service account storage permissions for Terraform state via WIF
 resource "google_project_iam_member" "ci_storage_admin" {
   project = var.project_id
   role    = "roles/storage.admin"
-  member  = "principalSet://iam.googleapis.com/${var.wif_provider}/attribute.repository/${var.var_github_org}/${var.repo}"
+  member  = "principalSet://iam.googleapis.com/${var.gcp_wif_provider}/attribute.repository/${var.var_github_org}/${var.repo}"
 }
 # GCS Module - Terraform State Bucket
 module "gcs_terraform_state" {
