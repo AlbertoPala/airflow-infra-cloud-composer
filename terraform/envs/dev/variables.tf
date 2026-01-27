@@ -39,7 +39,7 @@ variable "region" {
   default     = "us-central1"
 }
 
-variable "gcp_ci_sa" {
+variable "composer_service_account_email" {
   description = "Service account email for Cloud Composer (auto-generated from project_id)"
   type        = string
   default     = ""
