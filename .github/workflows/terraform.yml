@@ -36,9 +36,9 @@ jobs:
           terraform apply -auto-approve \
             -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
             -var="project_number=${{ secrets.PROJECT_NUMBER }}" \
-            -var="ci_service_account_email=${{ secrets.GCP_CI_SA }}" \
+            -var="gcp_ci_sa=${{ secrets.GCP_CI_SA }}" \
             -var="env=${{ env.ENV }}" \
             -var="var_github_org=${{ secrets.VAR_GITHUB_ORG }}" \
             -var="repo=${{ secrets.REPO }}" \
-            -var="wif_provider=${{ secrets.GCP_WIF_PROVIDER }}"
+            -var="gcp_wif_provider=${{ secrets.GCP_WIF_PROVIDER }}"
         working-directory: ${{ env.TF_WORKING_DIR }}
