@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
 
+concurrency:
+  group: terraform-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   TF_WORKING_DIR: terraform/envs/dev
 
