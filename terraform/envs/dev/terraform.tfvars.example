@@ -1,0 +1,14 @@
+# Example terraform.tfvars for local development
+# Do NOT commit this file with real values
+# All values should come from GitHub secrets/variables in CI/CD
+
+project_id               = "extraction-dev-xxxxx"
+region                   = "us-central1"
+env                      = "dev"
+project_number           = "xxxxxxxxxx"
+ci_service_account_email = "github-actions@extraction-dev-xxxxx.iam.gserviceaccount.com"
+var_github_org           = "your-org"
+repo                     = "airflow-infra-dataprocs"
+
+# Optional
+# composer_service_account_email = "composer@extraction-dev-xxxxx.iam.gserviceaccount.com"

@@ -4,8 +4,12 @@ on:
   push:
     branches: [main]
 
+env:
+  TF_WORKING_DIR: terraform/envs/dev
+
 jobs:
   apply:
+    name: Apply Terraform
     runs-on: ubuntu-latest
     environment: dev
 
@@ -23,8 +27,18 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v3
 
-      - run: terraform init
-        working-directory: terraform/envs/dev
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ${{ env.TF_WORKING_DIR }}
 
-      - run: terraform apply -auto-approve
-        working-directory: terraform/envs/dev
+      - name: Terraform Apply
+        run: |
+          terraform apply -auto-approve \
+            -var="project_id=${{ secrets.GCP_PROJECT_ID }}" \
+            -var="project_number=${{ secrets.PROJECT_NUMBER }}" \
+            -var="ci_service_account_email=${{ secrets.GCP_CI_SA }}" \
+            -var="env=${{ env.ENV }}" \
+            -var="var_github_org=${{ secrets.VAR_GITHUB_ORG }}" \
+            -var="repo=${{ secrets.REPO }}" \
+            -var="wif_provider=${{ secrets.GCP_WIF_PROVIDER }}"
+        working-directory: ${{ env.TF_WORKING_DIR }}

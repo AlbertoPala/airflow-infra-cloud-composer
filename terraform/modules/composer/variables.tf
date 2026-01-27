@@ -13,6 +13,11 @@ variable "region" {
   type        = string
 }
 
+variable "env" {
+  description = "Environment name (dev, staging, prod)"
+  type        = string
+}
+
 variable "composer_sa" {
   description = "Service Account que usará Cloud Composer"
   type        = string
