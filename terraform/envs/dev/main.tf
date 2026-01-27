@@ -9,7 +9,12 @@ module "wif" {
   repo                  = var.repo
   wif_provider          = var.wif_provider
 }
-
+# Grant CI service account storage permissions for Terraform state
+resource "google_project_iam_member" "ci_storage_admin" {
+  project = var.project_id
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:${var.ci_service_account_email}"
+}
 # GCS Module - Terraform State Bucket
 module "gcs_terraform_state" {
   source = "../../modules/gcs"
