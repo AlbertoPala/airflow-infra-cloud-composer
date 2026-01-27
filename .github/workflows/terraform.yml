@@ -31,6 +31,11 @@ jobs:
         run: terraform init
         working-directory: ${{ env.TF_WORKING_DIR }}
 
+      - name: Remove State Lock (if stale)
+        run: |
+          gsutil rm gs://tf-state-extraction-dev/infra/default.tflock 2>/dev/null || true
+        working-directory: ${{ env.TF_WORKING_DIR }}
+
       - name: Terraform Apply
         run: |
           terraform apply -auto-approve \
