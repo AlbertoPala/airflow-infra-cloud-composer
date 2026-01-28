@@ -50,5 +50,6 @@ jobs:
             -var="var_github_org=${{ secrets.VAR_GITHUB_ORG }}" \
             -var="repo=${{ secrets.REPO }}" \
             -var="gcp_wif_provider=${{ secrets.GCP_WIF_PROVIDER }}" \
-            -var="composer_sa=${{ secrets.COMPOSER_SA }}"
+            -var="composer_sa=${{ secrets.COMPOSER_SA }}" \
+            -var="gcp_wif_pool=${{ secrets.GCP_WIF_POOL }}"
         working-directory: ${{ env.TF_WORKING_DIR }}

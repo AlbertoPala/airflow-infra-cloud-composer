@@ -27,3 +27,8 @@ variable "gcp_wif_provider" {
   description = "Full resource name of the WIF provider (GCP_WIF_PROVIDER secret)"
   type        = string
 }
+
+variable "gcp_wif_pool" {
+  description = "WIF pool resource name (format: projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID)"
+  type        = string
+}

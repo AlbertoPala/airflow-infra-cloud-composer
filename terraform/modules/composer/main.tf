@@ -7,7 +7,7 @@ resource "google_composer_environment" "this" {
     environment_size = "ENVIRONMENT_SIZE_SMALL"
 
     software_config {
-      image_version = "composer-3-airflow-2.9.3"
+      image_version = "composer-3-airflow-3.1.6"
     }
 
     node_config {

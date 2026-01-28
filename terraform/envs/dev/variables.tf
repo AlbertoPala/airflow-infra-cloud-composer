@@ -33,6 +33,11 @@ variable "gcp_wif_provider" {
   type        = string
 }
 
+variable "gcp_wif_pool" {
+  description = "WIF pool resource name - from GCP_WIF_POOL secret"
+  type        = string
+}
+
 variable "region" {
   description = "GCP Region"
   type        = string
