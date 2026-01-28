@@ -39,10 +39,9 @@ variable "region" {
   default     = "us-central1"
 }
 
-variable "composer_service_account_email" {
-  description = "Service account email for Cloud Composer (auto-generated from project_id)"
+variable "composer_sa" {
+  description = "Service account email for Cloud Composer - from COMPOSER_SA secret"
   type        = string
-  default     = ""
 }
 
 variable "gcs_data_lake_storage_class" {

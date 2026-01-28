@@ -63,7 +63,7 @@ module "composer" {
   region        = var.region
   env           = var.env
   name          = "airflow-${var.env}"
-  composer_sa   = var.composer_service_account_email != "" ? var.composer_service_account_email : "composer@${var.project_id}.iam.gserviceaccount.com"
+  composer_sa   = var.composer_sa
 
   depends_on = [
     module.gcs_dags
