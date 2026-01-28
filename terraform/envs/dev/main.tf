@@ -8,6 +8,7 @@ module "wif" {
   var_github_org   = var.var_github_org
   repo             = var.repo
   gcp_wif_provider = var.gcp_wif_provider
+  gcp_wif_pool     = var.gcp_wif_pool
 }
 
 # Enable Cloud Composer API
